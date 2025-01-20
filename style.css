@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box; /* Permet de ne pas déborder de la taille de la fenêtre de s'ajuster automatiquement */
+}
+
+/* Bandeau du haut */
+.header { 
+  background-color: #dc9747;
+  border-radius: 40%; 
+  padding: 10px 400px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour l'effet flottant */
+}
+
+body {
+  color:black;
+  background-color:white;
+  background-image:url(images/images.jpg);
+  margin:0;
+  }
+
+/* Champ de saisie */
+#entreeUt { 
+  margin: 10px; 
+  border: none;
+  border-radius: 5px; /* bord arrondi */
+  width: 65%; /* centrer le bloc */
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Liste des tâches conteneur ul */
+ul { 
+    position: absolute; /* Permet de positionner précisément */
+    top: 200px; 
+    right: 7%; /* Décale la liste à droite */
+    width: 40%; /* Ajuste la largeur de la liste */
+    background-color: #fffaf0; 
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    padding: 0; /* Supprime les marges */
+    list-style-type: none; /* Supprime les puces */
+}
+
+
+
+/* Élément de la liste li */
+ul li { 
+  cursor: pointer;
+  position: relative; /* position flèche et croix */
+  padding: 12px 28px; /* Ajuste l'espacement interne */
+  font-size: 18px;
+  background: transparent;
+  border-bottom: 1px dashed #ddd; /* Bordure pour lignes de calepin */
+  margin: 0;
+  line-height: 1.8; /* Espacement entre les lignes */
+  font-family: 'Patrick Hand', cursive; 
+  transition: background-color 0.2s; /* effet survol */
+}
+
+/* Ligne impaire */
+ul li:nth-child(odd) { 
+  background: #f9f9f9;
+}
+
+/* Arrière-plan au survol */
+ul li:hover {
+  background: #ddd;
+}
+
+/* Éléments cochés de la liste */
+ul li.checked {
+  background: #888; /* Fond quand cest terminé */
+  color: #fff; /* Texte blanc pour contraste */
+  text-decoration: line-through; /* Barre le texte */
+}
+
+/* Coche visible pour les éléments cochés */
+ul li.checked::before { 
+  content: '';
+  position: absolute;
+  left: 10px; /* Positionne la coche à gauche */
+  top: 50%; 
+  transform: translateY(-50%) rotate(45deg); /* Centre vertical et rotation */
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  height: 10px;
+  width: 5px;
+}
+
+/* Bouton de suppression croix */
+.close {
+  position: absolute;
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%);
+  padding: 4px;
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Style croix survol */
+.close:hover {
+  background-color: #fa9c29;
+  color: white;
+  border-radius: 50%; /* Arrondi pour bouton */
+}
+
+/* Style pour empêcher que d'autres styles s'ajoutent */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Bouton d'ajout */
+.addBtn {
+  padding: 10px;
+  width: 20%;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px; 
+  margin-left: 5px; 
+}
+
+/* survol souris bouton addBtn */
+.addBtn:hover {
+  background-color: #26a2cf;
+  color: white;
+}
+
+.edit {
+  position: absolute;
+  right: 40px; 
+  top: 0;
+  padding: 8px;
+  font-size: 16px;
+  color: #fc0303;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.edit:hover {
+  color: #26a2cf; /* Change couleur survol */
+}
+
